@@ -2,8 +2,7 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
-
-@app.route("/")
+@app.route("/home/takamo012345/mori/")
 def bbs():
     message = "Hello"
     return render_template("index.html", message = message)
