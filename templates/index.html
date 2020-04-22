@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ハイスピード株価厳選</title>
+        <meta charset="utf-8">
+        <script src="static/brython.js"></script>
+        <script src="static/brython_stdlib.js"></script>    
+    </head>
+    <body onload="brython()">
+        <script type="text/python" src="static/mori.py"></script>
+        <input type="hidden" id="state" value="0"/>
+        <h1>ハイスピード株価厳選</h1>
+        <p id="kabuka_text">火曜日の午前の株の価格</p>
+        <input type="text" id="kabuka" />
+        <br><button id="execute">入力</button>
+        <div id="result"></div>
+    </body>
+</html>
