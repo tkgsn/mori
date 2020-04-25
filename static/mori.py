@@ -6,7 +6,7 @@ def write_result(text):
     
 day2ind = {"tuem": 2, "tuee":3, "wedm":4, "wede":5, "thum":6, "thue":7, "frim":8, "frie":9, "satm":10, "sate":11}
 ind2day = {value: key for key, value in day2ind.items()}
-day2text = {"tuem":"火曜日", "tuee":"火曜日", "wedm":"水曜日", "wede":"水曜日", "thum":"木曜日", "thue":"木曜日", "frim":"金曜日", "frie":"金曜日", "satm":"土曜日", "sate":"土曜日"}
+day2text = {"tuem":"火曜日午前", "tuee":"火曜日午後", "wedm":"水曜日午前", "wede":"水曜日午後", "thum":"木曜日午前", "thue":"木曜日午後", "frim":"金曜日午前", "frie":"金曜日午後", "satm":"土曜日午前", "sate":"土曜日午後"}
     
 def step(n_step, day):
     return ind2day[day2ind[day] + n_step]
