@@ -2,17 +2,36 @@
 <html>
     <head>
         <title>ハイスピード株価厳選</title>
-        <meta charset="utf-8">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" media="all" href="{{ url_for('static',filename='css/style.css') }}">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
         <script src="static/brython.js"></script>
         <script src="static/brython_stdlib.js"></script>    
     </head>
     <body onload="brython()">
         <script type="text/python" src="static/mori.py"></script>
-        <input type="hidden" id="state" value="0"/>
-        <h1>ハイスピード株価厳選</h1>
-        <p id="kabuka_text">火曜日の午前の株の価格</p>
-        <input type="text" id="kabuka" />
-        <br><button id="execute">入力</button>
+        <input type="hidden" id="state" value="3"/>
+        <input type="hidden" id="day" value="tuem"/>
+        <p >ハイスピード株価厳選</p>
+        <h2 id="day_text">火曜日</h2>
+        
+        <span id="kabuka_text">午前の株の価格</span>
+        <span class="input">
+        <input type="text" id="kabuka1">
+        <span></span>
+        </span>
+
+        <br><span id="kabuka_text">午後の株の価格</span>
+        <span class="input">
+        <span></span>
+        <input type="text" id="kabuka2" readonly>
+        </span>
+        
+        <br>
+        <span class="square_btn" id="execute">BUTTON</span>
+        
+        <br>
         <div id="result"></div>
     </body>
 </html>
