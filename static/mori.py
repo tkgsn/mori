@@ -123,12 +123,14 @@ def judge():
         if sum(intersection) == 1:
             if intersection[0] == 1:
                 if day == "thue":
-                    write_result("…天国か地獄だな。土曜日の午前の株価を入力してくれ。おつかれ")
-                    day = "satm"
-                    state = 2
+                    write_result("明後日の午前が底かピークだ。株価を入力してくれ。おつかれ")
+                    n_step = 3
+                    day = step(n_step, day)
+                    state = 1
                 else:
                     write_result("減少状態だな。明後日の午前の株価を入力してくれ。おつかれ")
-                    day = "thum"
+                    n_step = 3
+                    day = step(n_step, day)
                     state = 2
             elif intersection[1] == 1:
                 write_result("増加状態だな。明日の午後がピークかもしれない。おつかれ")
@@ -139,6 +141,8 @@ def judge():
             elif intersection[2] == 1:
                 write_result("激増状態だな。明日の午前がピークかもしれないな。おつかれ")
                 day = "wedm"
+                n_step = 1
+                day = step(n_step, day)
                 state = 1
             else:
                 write_result("ピークだな。おつかれ")
@@ -151,12 +155,13 @@ def judge():
                 state = 3
             elif intersection[1] == intersection[2] == 1:
                 write_result("増加状態か激増状態だ。明日の午前か午後にピークがくるかもしれないな。おつかれ")
-                day = "wedm"
+                n_step = 1
+                day = step(n_step, day)
                 state = 1
             elif intersection[2] == intersection[3] == 1:
                 n_step = 1
                 day = step(n_step, day)
-                write_result("激増状態かピークだな。これで満足するなら終わりだ！明日の午前に跳ねる可能性もあるぞ。おつかれ")
+                write_result("激増状態かピークだな。ピークかもしれないが、明日の午前に跳ねる可能性もあるな。おつかれ")
                 state = 1
     elif state == 1:
         if judge_peak(kabuka1) and kabuka1 >= gekizou_upper_bound:
@@ -177,7 +182,8 @@ def judge():
                 state = 100
         else:
             write_result("午後の株価を入力してくれ。おつかれ")
-            day = "thue"
+            n_step = 1
+            day = step(n_step, day)
             state = 0
     elif state == 3:
         write_result("午後の株価を入力してくれ。おつかれ")
