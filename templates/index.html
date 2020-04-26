@@ -5,6 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" media="all" href="{{ url_for('static',filename='css/style.css') }}">
+        <link rel="stylesheet" media="all" href="{{ url_for('static',filename='css/popup.css') }}">
         <script data-ad-client="ca-pub-8112862785202240" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
         <script src="static/brython.js"></script>
@@ -14,7 +15,31 @@
         <script type="text/python" src="static/mori.py"></script>
         <input type="hidden" id="state" value="3"/>
         <input type="hidden" id="day" value="tuem"/>
+        
+        <div id="popup1" class="overlay">
+           <div class="popup">
+            <a class="close" href="#">&times;</a>
+
+               <h3>注意点</h3>
+            <ul>
+                <li>これはタイムトラベラー専用です</li>
+                <li>220ベル以上の株価をハイスピードに見つけるためのツールです</li>
+                <li>時間を1分でも戻すと株価が変わります</li>
+            </ul>
+
+               <h3>厳選方法</h3>
+               <ol>
+                   <li>火曜日の午前11:58に飛ぶ</li>
+                   <li>たぬきち商店にて株価を見て、入力する</li>
+                   <li>12:00まで待ち、午後の株価を見て、入力する</li>
+                   <li>指示に従ってタイムトラベル、入力をする</li>
+               </ol>
+               
+            </div>
+        </div>
+        
         <p>ハイスピード株価厳選</p>
+
         <h2 id="day_text">火曜日午前</h2>
         
         <span id="kabuka_text1">午前の株の価格</span>
@@ -23,7 +48,7 @@
         <span></span>
         </span>
 
-        <br><span id="kabuka_text2" style="opacity: 0.3;">午後の株の価格</span>
+        <br><span id="kabuka_text2" style="opacity: 0.3; position: relative; z-index: 0;">午後の株の価格</span>
         <span class="input">
         <span></span>
         <input type="text" id="kabuka2" readonly>
@@ -34,5 +59,10 @@
         
         <br>
         <div id="result">火曜日、午前の株価を入力してくれ。おつかれ</div>
+        
+        <div class="box">
+            <a class="square_btn" href="#popup1">説明</a>
+        </div>
+            
     </body>
 </html>
