@@ -140,7 +140,6 @@ def judge():
                 state = 1
             elif intersection[2] == 1:
                 write_result("激増状態だな。明日の午前がピークかもしれないな。おつかれ")
-                day = "wedm"
                 n_step = 1
                 day = step(n_step, day)
                 state = 1
