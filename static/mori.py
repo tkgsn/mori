@@ -163,6 +163,8 @@ def judge():
                 write_result("激増状態かピークだな。ピークかもしれないが、明日の午前に跳ねる可能性もあるな。おつかれ")
                 state = 1
     elif state == 1:
+        if day[3] == "e":
+            kabuka1 = kabuka2
         if judge_peak(kabuka1) and kabuka1 >= gekizou_upper_bound:
             write_result("ピークだな。おつかれ")
             state = 100
