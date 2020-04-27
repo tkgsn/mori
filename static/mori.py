@@ -58,7 +58,7 @@ def judge():
         if day == "thue":
             return [0, vec[0], vec[1], vec[2]]
         else:
-            return [vec[0], vec[0], vec[1], vec[1]]
+            return [vec[0], vec[0], vec[1], vec[2]]
         
     kabuka1_field = document["kabuka1"]
     kabuka2_field = document["kabuka2"]
@@ -111,7 +111,9 @@ def judge():
     elif state == 0:
         morning_judge_vec = compute_possible_states(day[:3] + "m", kabuka1)
         evening_judge_vec = compute_possible_states(day[:3] + "e", kabuka2)
+        print(morning_judge_vec)
         inference_evening_judge_vec = infer_next_state(morning_judge_vec)
+        print(inference_evening_judge_vec)
         intersection = compute_intersection(evening_judge_vec, inference_evening_judge_vec)
         
         print(intersection)
