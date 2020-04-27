@@ -169,8 +169,15 @@ def judge():
             write_result("ピークだな。おつかれ")
             state = 100
         else:
-            write_result("残念だな。おつかれ")
-            state = 100
+            if day[3] == "m":
+                if kabuka1 >= gekizou_lower_bound:
+                    write_result("午後にピークの可能性があるな。おつかれ")
+                    state = 1
+                    n_step = 1
+                    day = step(n_step, day)
+                else:
+                    write_result("残念だな。おつかれ")
+                    state = 100
     elif state == 2:
         if judge_peak(kabuka1):
             if kabuka1 <= gekizou_upper_bound:
